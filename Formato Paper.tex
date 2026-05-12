@@ -1,0 +1,160 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{lipsum} % solo para texto de prueba, puedes quitarlo
+
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+
+% --- MÁRGENES ---
+\geometry{
+  top=2.5cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm,
+  headheight=1.5cm
+}
+
+% --- FRANJA BORDE SUPERIOR (todas las páginas) ---
+\definecolor{turquesa}{RGB}{0, 164, 153}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[turquesa] 
+      (current page.north west)
+      rectangle 
+      +(\paperwidth, -10pt);% ancho barra total
+  \end{tikzpicture}%
+}
+% --- ENCABEZADO CON LOGO ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{%
+  \hspace{-2cm}
+  \includegraphics[height=1cm]{images/Usach S1.png}%
+}
+
+% Opcional: número de página al pie
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\usepackage{multicol}
+% ============================================================
+\begin{document}
+
+% ---- PORTADA ESTILO IEEE (1 columna) ----
+\begin{center}
+  \thispagestyle{fancy} % mantiene encabezado en la portada
+  \centering
+  \vspace{1cm}
+
+  % Título del paper
+  {\LARGE \textbf{Título}\\[0.4em]
+  \large \textit{Subtítulo}}
+
+  \vspace{1.2cm}
+
+  % Autor (estilo IEEE: nombre, institución, email)
+  \textbf{Nombre Apellido}\\
+  Departamento de Ingeniería Informática\\
+  Universidad de Santiago de Chile\\
+  \texttt{autor1@univ.cl}
+  
+  \vspace{0.8em}
+  {\small \textit{Profesor:} Lord Farquaad \quad | \quad \textit{Ayudante:} Thelonius de Duloc}
+  \vspace{0.8em}
+
+  % Resumen (Abstract)
+  \begin{minipage}{0.85\textwidth}
+    \textbf{\textit{Resumen}—} Aquí va el resumen del trabajo. 
+    Debe ser conciso, describiendo el objetivo, metodología, resultados y conclusiones principales.
+    
+    \vspace{0.8em}
+    \textbf{\textit{Palabras clave}—} palabra1, palabra2, palabra3, palabra4.
+  \end{minipage}
+
+  \vspace{0.6cm}
+  {\small Santiago, Chile \\ \today}
+\end{center}
+
+
+\begin{multicols}{2}  
+
+\section{Introducción}
+\lipsum[1]
+\begin{center}
+  \includegraphics[width=0.3\linewidth]{images/Usach P1.png}
+  \captionof{figure}{Logo principal USACH}
+  \label{fig:LogoUsachP1}
+\end{center}
+
+\section{Desarrollo}
+\lipsum[2-3]
+\begin{equation}
+  \hat{x} = \sum_{i=1}^{k} y_i \mathbf{W}_i \quad\quad k < 2
+  \label{eq:estimador}
+\end{equation}
+
+
+\section{Resultados experimentales y discusión}
+\lipsum[4-6]
+
+\begin{center}
+
+\label{tab:mitabla}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Columna1} & \textbf{Columna2} & \textbf{Columna3} \\ \hline
+Fila2             & 123               & 321               \\ \hline
+Fila3             & 132               & 312               \\ \hline
+\end{tabular}
+\captionof{table}{Tabla de ejemplo}
+\end{center}
+
+\lipsum[7]
+\end{multicols}
+% cierra las 2 columnas temporalmente para incorporar una imagen del ancho del documento
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{images/Usach SVN.png}
+  \caption{Logo secundario blanco y negro USACH}
+  \label{fig:LogoUsachSVN}
+\end{figure}
+
+\begin{multicols}{2}  % retoma las 2 columnas
+
+\section{Conclusiones}
+\lipsum[8-9]
+\end{multicols}
+% cierra las 2 columnas temporalmente para incorporar una tabla del ancho del documento
+\begin{table}[h]
+  \centering
+  
+  \label{tab:mitabla}
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    \textbf{Columna1} & \textbf{Columna2} & \textbf{Columna3} & \textbf{Columna4} & \textbf{Columna5} & \textbf{Columna6} \\ \hline
+    Fila2             & 123               & 321               & 456               & 654               & 546               \\ \hline
+    Fila3             & 132               & 312               & 789               & 987               & 897               \\ \hline
+    \end{tabular}
+  \caption{tabla de ejemplo 2}
+\end{table}
+
+\begin{multicols}{2}
+\lipsum[10-12]
+
+
+\end{multicols}
+
+\end{document}
