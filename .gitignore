@@ -1,0 +1,41 @@
+# Archivos auxiliares de LaTeX
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.fdb_latexmk
+*.pdfsync
+
+# Auxiliares de bibliografía
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# Otros archivos generados
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Archivos de editor/IDE (ejemplos)
+*.swp
+*.swx
+*~
+*.bak
+.DS_Store
+.vscode/
+.idea/

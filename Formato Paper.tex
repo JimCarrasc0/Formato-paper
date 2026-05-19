@@ -11,6 +11,8 @@
 \usepackage{geometry}
 \usepackage{multicol}
 \usepackage{caption}
+\usepackage{url}
+\usepackage{hyperref}
 \usepackage{lipsum} % solo para texto de prueba, puedes quitarlo
 
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
@@ -91,7 +93,7 @@
 \begin{multicols}{2}  
 
 \section{Introducción}
-\lipsum[1]
+\lipsum[1] \cite{sit2020}
 \begin{center}
   \includegraphics[width=0.3\linewidth]{images/Usach P1.png}
   \captionof{figure}{Logo principal USACH}
@@ -107,7 +109,7 @@
 
 
 \section{Resultados experimentales y discusión}
-\lipsum[4-6]
+\lipsum[4-6] \cite{loremipsum1952}
 
 \begin{center}
 
@@ -135,7 +137,7 @@ Fila3             & 132               & 312               \\ \hline
 \begin{multicols}{2}  % retoma las 2 columnas
 
 \section{Conclusiones}
-\lipsum[8-9]
+\lipsum[8-9] \cite{lorem2025}
 \end{multicols}
 % cierra las 2 columnas temporalmente para incorporar una tabla del ancho del documento
 \begin{table}[h]
@@ -157,4 +159,7 @@ Fila3             & 132               & 312               \\ \hline
 
 \end{multicols}
 
+
+\bibliographystyle{IEEEtran}   % estilo numérico IEEE [1], [2], ...
+\bibliography{bibliografia}
 \end{document}
